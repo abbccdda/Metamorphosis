@@ -4,6 +4,7 @@ environment:
 install:
   - ps: Start-FileDownload 'http://mirror.symnds.com/software/Apache/zookeeper/zookeeper-3.4.6/zookeeper-3.4.6.tar.gz'
   - echo y | 7z x zookeeper-3.4.6.tar.gz  -o"C:\Users\appveyor\"
+  - echo y | 7z x C:\Users\appveyor\zookeeper-3.4.6.tar  -o"C:\Users\appveyor\"
   - ls C:\Users\appveyor\
   - 'C:\Users\appveyor\zookeeper-3.4.6\bin\zkServer.cmd start'
   - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
